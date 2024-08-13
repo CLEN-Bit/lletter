@@ -1,0 +1,103 @@
+/* styles.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.envelope {
+    width: 200px;
+    height: 150px;
+    background: #f7d6e0;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.heart-button {
+    font-size: 3em;
+    color: #ff4b4b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.letter {
+    display: none;
+    background: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.letter p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.balloons, .hearts {
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.balloon, .heart {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    animation: float 6s ease-in infinite;
+}
+
+.balloon {
+    background: radial-gradient(circle at 50% 50%, #ff6f91, #ff4b4b);
+}
+
+.heart {
+    background: #ff4b4b;
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: float-heart 8s ease-in infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(calc(100vw - 50px)) translateY(-100vh);
+    }
+}
+
+@keyframes float-heart {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    100% {
+        transform: translateX(calc(-100vw + 50px)) translateY(-100vh) scale(1.5);
+    }
+}
